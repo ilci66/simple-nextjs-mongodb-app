@@ -1,7 +1,5 @@
 import Link from 'next/link';
-
-// gonna create later
-// import styles from '../styles/Nav.module.css';
+import styles from '../styles/Nav.module.css';
 
 export default function Nav() {
     return (
