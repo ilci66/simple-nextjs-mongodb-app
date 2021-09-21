@@ -4,14 +4,6 @@ import Nav from '../components/Nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
 
-export async function getServerSideProps(ctx) {
-
-  return {
-      props: {
-          posts: ['message'],
-      },
-  };
-}
 
 export default function Home({ posts }) {
     return (
@@ -19,9 +11,7 @@ export default function Home({ posts }) {
             <Head>
                 <title>Home</title>
             </Head>
-
             <Nav />
-
             <main>
                 <div className={styles.container}>
                     {posts.length === 0 ? (
@@ -39,3 +29,11 @@ export default function Home({ posts }) {
     );
 }
 
+export async function getServerSideProps(ctx) {
+
+  return {
+      props: {
+          posts: ['message'],
+      },
+  };
+}
