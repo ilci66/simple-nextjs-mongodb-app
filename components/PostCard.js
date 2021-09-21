@@ -9,12 +9,8 @@ export default function PostCard({ post }) {
                 <p>{post.content}</p>
                 <small>{new Date(post.createdAt).toLocaleDateString()}</small>
                 <br />
-                    <button type="button">
-                        {'Publish'}
-                    </button>
-                <button type="button" >
-                    {'Delete'}
-                </button>
+                <button type="button"> {'Publish'} </button>
+                <button type="button"> {'Delete'} </button>
             </li>
         </>
     );
