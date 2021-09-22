@@ -33,11 +33,12 @@ export default function Home({ posts }) {
 export async function getServerSideProps(ctx) {
     // get the current environment
     // let dev = process.env.NODE_ENV !== 'production';
-    // just addin this, I don't wanna have to go through adding it on vercel
+    // just adding this, I don't wanna have to go through adding it on vercel
     let dev = false
-    console.log("dev>>", dev)
+    // console.log("dev>>", dev)
     let { DEV_URL, PROD_URL } = process.env;
-
+    const whatUrl = `${dev ? DEV_URL : PROD_URL}/api/posts`
+    // console.log('the url is>>>', whatUrl)
     // request posts from api
     let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
     // extract the data
