@@ -4,14 +4,15 @@ import Nav from '../components/Nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
 
-
 export default function Home({ posts }) {
     return (
         <div>
             <Head>
                 <title>Home</title>
             </Head>
+
             <Nav />
+
             <main>
                 <div className={styles.container}>
                     {posts.length === 0 ? (
@@ -30,10 +31,18 @@ export default function Home({ posts }) {
 }
 
 export async function getServerSideProps(ctx) {
+    // get the current environment
+    let dev = process.env.NODE_ENV !== 'production';
+    let { DEV_URL, PROD_URL } = process.env;
 
-  return {
-      props: {
-          posts: ['message'],
-      },
-  };
+    // request posts from api
+    let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
+    // extract the data
+    let data = await response.json();
+
+    return {
+        props: {
+            posts: data['message'],
+        },
+    };
 }
