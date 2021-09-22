@@ -86,6 +86,30 @@ export default async function handler(req, res) {
         }
 
         case 'DELETE': {
+            async function deletePost(req, res) {
+                try {
+                    // Connecting to the database
+                    let { db } = await connectToDatabase();
+            
+                    // Deleting the post
+                    await db.collection('posts').deleteOne({
+                        _id: new ObjectId(req.body),
+                    });
+            
+                    // returning a message
+                    return res.json({
+                        message: 'Post deleted successfully',
+                        success: true,
+                    });
+                } catch (error) {
+            
+                    // returning an error
+                    return res.json({
+                        message: new Error(error).message,
+                        success: false,
+                    });
+                }
+            }
             return deletePost(req, res);
         }
     }
