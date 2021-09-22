@@ -7,12 +7,12 @@ export default function Nav() {
         <nav className={styles.nav}>
             <ul className={styles.list}>
                 <li className={styles.item}>
-                    <Link href="simple-nextjs-mongodb-app.vercel.app/">
+                    <Link href="/">
                         <a>Home</a>
                     </Link>
                 </li>
                 <li>
-                    <Link href="simple-nextjs-mongodb-app.vercel.app/add-post">
+                    <Link href="/add-post">
                         <a>Add post</a>
                     </Link>
                 </li>
