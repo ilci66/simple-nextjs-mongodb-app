@@ -30,7 +30,7 @@ export default function AddPost() {
         let response = await fetch('simple-nextjs-mongodb-app.vercel.app/api/posts', {
             method: 'POST',
             body: JSON.stringify(post),
-        });
+        })
 
         // get the data
         let data = await response.json();
