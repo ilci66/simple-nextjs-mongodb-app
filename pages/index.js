@@ -33,6 +33,7 @@ export default function Home({ posts }) {
 export async function getServerSideProps(ctx) {
     // get the current environment
     let dev = process.env.NODE_ENV !== 'production';
+    console.log("dev>>", dev)
     let { DEV_URL, PROD_URL } = process.env;
 
     // request posts from api
