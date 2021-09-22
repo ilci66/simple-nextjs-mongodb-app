@@ -55,6 +55,33 @@ export default async function handler(req, res) {
         }
 
         case 'PUT': {
+            async function updatePost(req, res) {
+                try {
+                    // connect to the database
+                    let { db } = await connectToDatabase();
+            
+                    // update the published status of the post
+                    await db.collection('posts').updateOne(
+                        {
+                            _id: new ObjectId(req.body),
+                        },
+                        { $set: { published: true } }
+                    );
+            
+                    // return a message
+                    return res.json({
+                        message: 'Post updated successfully',
+                        success: true,
+                    });
+                } catch (error) {
+            
+                    // return an error
+                    return res.json({
+                        message: new Error(error).message,
+                        success: false,
+                    });
+                }
+            }
             return updatePost(req, res);
         }
 
