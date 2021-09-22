@@ -32,7 +32,9 @@ export default function Home({ posts }) {
 
 export async function getServerSideProps(ctx) {
     // get the current environment
-    let dev = process.env.NODE_ENV !== 'production';
+    // let dev = process.env.NODE_ENV !== 'production';
+    // just addin this, I don't wanna have to go through adding it on vercel
+    let dev = false
     console.log("dev>>", dev)
     let { DEV_URL, PROD_URL } = process.env;
 
