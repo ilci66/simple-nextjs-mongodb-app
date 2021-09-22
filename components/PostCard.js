@@ -5,11 +5,11 @@ export default function PostCard({ post }) {
     const [publishing, setPublishing] = useState(false);
     const [deleting, setDeleting] = useState(false);
     const router = useRouter();
-    const [ time, setTime ] = useState(undefined)
+    // const [ time, setTime ] = useState(undefined)
 
-    useEffect(()=>{
-        setTime(new Date(post.createdAt).toLocaleDateString())
-    },[])
+    // useEffect(()=>{
+    //     setTime(new Date(post.createdAt).toLocaleDateString())
+    // },[])
     // Publish post
     const publishPost = async (postId) => {
         // change publishing state
@@ -61,7 +61,7 @@ export default function PostCard({ post }) {
                 <p>{post.content}</p>
                 {/*this cause a minor difference, therefore an error, between server and client side*/}
                 {/* <small>{new Date(post.createdAt).toLocaleDateString()}</small> */}
-                <small>{time}</small>
+                {/* <small>{time}</small> */}
                 <br />
                 {!post.published ? (
                     <button type="button" onClick={() => publishPost(post._id)}>
