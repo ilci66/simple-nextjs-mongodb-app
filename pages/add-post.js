@@ -27,7 +27,7 @@ export default function AddPost() {
             createdAt: new Date().toISOString(),
         };
         // save the post
-        let response = await fetch('simple-nextjs-mongodb-app.vercel.app/api/posts', {
+        let response = await fetch('https://simple-nextjs-mongodb-app.vercel.app/api/posts', {
             method: 'POST',
             body: JSON.stringify(post),
         })
