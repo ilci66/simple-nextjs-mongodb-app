@@ -41,7 +41,7 @@ export async function getServerSideProps(ctx) {
     // console.log('the url is>>>', whatUrl)
     // request posts from api
     // let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
-    let response = await fetch('https://simple-nextjs-mongodb-app.vercel.app/')
+    let response = await fetch('https://simple-nextjs-mongodb-app.vercel.app/api/posts')
     // extract the data
     let data = await response.json();
 
