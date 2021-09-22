@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Nav from '../components/Nav';
+import Nav from '../components/nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Nav from '../components/Nav';
+import Nav from '../components/nav';
 import styles from '../styles/Home.module.css';
 
 export default function AddPost() {
